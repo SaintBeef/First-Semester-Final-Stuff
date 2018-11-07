@@ -1,4 +1,8 @@
+import java.awt.*;
+import javax.swing.*;
 
-public class TGraphic {
-    
+public class TGraphic extends JFrame{
+    TGraphic() {
+        
+    }
 }
