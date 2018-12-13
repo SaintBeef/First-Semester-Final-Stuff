@@ -19,9 +19,9 @@ public class Deck {
             pos = (int)Math.random()*(52-i)+(1+i);
             while (reg[pos] == true)
                 pos = (int)Math.random()*52+1;
-            temp = doc[pos];
-            doc[pos] = doc[i];
-            doc[i] = temp;
+            temp = doc.get(pos);
+            doc.set(pos, doc.get(i));
+            doc.set(i, temp);
         }
     }
 }
