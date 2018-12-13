@@ -29,9 +29,18 @@ public class Deck {
 
     public String dealEntireDeck() {
         String out = "";
-        for (int i = 0; i < cardsleft; i++)
+        for (int i = cardsleft; 0 < i; i--)
             out = out + "\n" + doc.get(i).toString();
         cardsleft = 0;
+        return out;
+    }
+    
+    public String dealCards(int n) {
+        String out = "";
+        for (int i = n; 0 < i; i--) {
+            out = out + "\n" + doc.get(cardsleft).toString();
+            cardsleft--;
+        }
         return out;
     }
 }
