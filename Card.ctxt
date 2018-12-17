@@ -7,7 +7,12 @@ comment2.target=boolean\ takeCard()
 comment3.params=
 comment3.target=void\ returnCard()
 comment4.params=
+<<<<<<< HEAD
 comment4.target=int[]\ getData()
 comment5.params=
 comment5.target=java.lang.String\ toString()
 numComments=6
+=======
+comment4.target=java.lang.String\ toString()
+numComments=5
+>>>>>>> a9cad514d7df7932cc0d27bce56431482ef39632
