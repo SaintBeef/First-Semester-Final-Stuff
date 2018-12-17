@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=_Name
+comment1.target=Player(java.lang.String)
+comment2.params=
+comment2.target=java.util.ArrayList\ getHand()
+comment3.params=dealt
+comment3.target=void\ deal(java.util.ArrayList)
+comment4.params=dealt
+comment4.target=void\ deal(Card)
+comment5.params=
+comment5.target=void\ clearHand()
+comment6.params=
+comment6.target=int\ getBalance()
+comment7.params=b
+comment7.target=void\ bet(int)
+comment8.params=d
+comment8.target=void\ deposit(int)
+comment9.params=
+comment9.target=int[][]\ getHandData()
+numComments=10

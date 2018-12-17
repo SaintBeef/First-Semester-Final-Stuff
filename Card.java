@@ -53,6 +53,11 @@ public class Card {
         taken = false;
     }
     
+    public int[] getData() {
+        int[] temp = {suit, value};
+        return temp;
+    }
+    
     public String toString() {
         return face + " of " + fsuit;
     }

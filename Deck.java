@@ -5,42 +5,57 @@ public class Deck {
     private int cardsleft;
 
     public Deck() {
-        for (int i = 0; i < 12; i++) {
+        for (int i = 0; i < 13; i++) {
             for (int j = 0; j < 4; j++)
                 doc.add(new Card(j, i+2));
         }
         cardsleft = 52;
-        shuffle();
     }
 
     public void shuffle() {
-        boolean[] reg = new boolean[52];
-        int pos = 0;
-        Card temp;
-        for (int i = 0; i < cardsleft; i++) {
-            pos = (int)Math.random()*(52-i)+(1+i);
-            while (reg[pos] == true)
-                pos = (int)Math.random()*52+1;
-            temp = doc.get(pos);
-            doc.set(pos, doc.get(i));
-            doc.set(i, temp);
+        for (int j = 0; j < 3; j++) {
+            ArrayList<Card> temp = new ArrayList();
+            for (int i = 0; i < cardsleft; i++) {
+                int r = (int)(Math.random()*(cardsleft-(1+i)));
+                Card temp0 = doc.get(r);
+                doc.remove(r);
+                temp.add(temp0);
+            }
+            doc = temp;
         }
     }
 
     public String dealEntireDeck() {
         String out = "";
-        for (int i = cardsleft; 0 < i; i--)
-            out = out + "\n" + doc.get(i).toString();
-        cardsleft = 0;
-        return out;
-    }
-    
-    public String dealCards(int n) {
-        String out = "";
-        for (int i = n; 0 < i; i--) {
-            out = out + "\n" + doc.get(cardsleft).toString();
+        if (cardsleft == 0)
+            return "There are no cards left!";
+        for (int i = cardsleft-1; 0 <= i; i--) {
+            Card temp = doc.get(i);
+            out = out + "\n" + temp.toString();
             cardsleft--;
         }
         return out;
+    }
+
+    public int countCards() {
+        return cardsleft;
+    }
+
+    public String dealCards(int n) {
+        String out = "";
+        if (cardsleft < n)
+            return "That's more than the cards left in the deck!";
+        for (int i = n; 0 < i; i--) {
+            Card temp = doc.get(cardsleft-1);
+            out = out + "\n" + temp.toString();
+            cardsleft--;
+        }
+        return out;
+    }
+    
+    public Card deal() {
+        Card temp = doc.get(cardsleft-1);
+        cardsleft--;
+        return temp;
     }
 }
